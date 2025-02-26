@@ -32,7 +32,7 @@ RUN mamba install -c conda-forge -y aiida-core=2.6.3 postgresql=17.2
 RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
       conda install conda-forge/linux-64::gromacs=2024.5=nompi_h5f56185_100 -y; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
-      conda install conda-forge/osx-arm64::gromacs=2024.5=nompi_he3c68ee_100 -y; \
+      conda install conda-forge/linux-aarch64::gromacs=2024.5=nompi_h9afd374_100 -y; \
     fi
 RUN pip3 install aiida-gromacs
 

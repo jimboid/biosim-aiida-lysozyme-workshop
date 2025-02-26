@@ -24,10 +24,7 @@ WORKDIR /opt/
 # Install RabbitMQ for Mac
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
-    curl \
-    erlang \
-    cmake \
-    xz-utils && \
+    erlang  && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     wget -c --no-check-certificate https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.10.14/rabbitmq-server-generic-unix-3.10.14.tar.xz && \
     tar -xf rabbitmq-server-generic-unix-3.10.14.tar.xz && \

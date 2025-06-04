@@ -16,6 +16,7 @@ jobs:
       run: |
         docker run -t ghcr.io/${{ github.repository }}:dev bash -c "\
           bash /home/jovyan/aiida-start; \
+          export PYTEST_CURRENT_TEST=TRUE; \
           find . -name '*.ipynb' | jupyter nbconvert --to notebook --execute lysozyme_tutorial.ipynb; \
           sleep 2; \
           verdi process list -a; \
